@@ -9,6 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class EmployeeController {
 
 	
+	@GetMapping("about-us")
+	public String aboutus() {
+		
+		
+		return "employee-aboutus";
+	}
+	
 	@GetMapping("getAllEmployees")
 	public String getAllEmployees() {
 		
