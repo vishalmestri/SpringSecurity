@@ -6,7 +6,8 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
-employee-home.jsp
+<body>employee-home.jsp
+
+<jsp:include page="logout.jsp"></jsp:include>
 </body>
 </html>

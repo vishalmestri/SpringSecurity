@@ -8,5 +8,6 @@
 </head>
 <body>
 employee-new.jsp
+ <jsp:include page="logout.jsp"></jsp:include>
 </body>
 </html>

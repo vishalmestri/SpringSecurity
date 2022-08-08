@@ -30,7 +30,9 @@ public class FilterChain extends WebSecurityConfigurerAdapter {
 		.antMatchers("/aboutUs","/customLogin").permitAll()
 		.anyRequest().denyAll()
 		.and()
-		.formLogin().loginPage("/customLogin").loginProcessingUrl("/loginProcessing").defaultSuccessUrl("/employeeHome");
+		.formLogin().loginPage("/customLogin").loginProcessingUrl("/loginProcessing").defaultSuccessUrl("/employeeHome")
+		.and()
+		.logout();
 	
 	}
 	
