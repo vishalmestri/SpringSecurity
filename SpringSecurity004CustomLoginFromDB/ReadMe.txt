@@ -1,0 +1,1 @@
+This project contains custom login page with default spring db schema.
