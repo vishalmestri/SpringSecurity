@@ -79,6 +79,21 @@ public class EmployeeDTO {
 	}
 	private String name;
 	private String email;
+	public String getProfilePicServername() {
+		return profilePicServername;
+	}
+	public void setProfilePicServername(String profilePicServername) {
+		this.profilePicServername = profilePicServername;
+	}
+	public String getProfilePicUserName() {
+		return profilePicUserName;
+	}
+	public void setProfilePicUserName(String profilePicUserName) {
+		this.profilePicUserName = profilePicUserName;
+	}
+	private String profilePicServername;
+	private String profilePicUserName;
+	private String dob;
 	private byte gender;
 	private String pwd;
 	private String role;
@@ -102,14 +117,31 @@ public class EmployeeDTO {
 		this.m_by = m_by;
 		this.m_on = m_on;
 	}
+	
+	
+	private String profilePicFileContent;
+
 	@Override
 	public String toString() {
-		return "EmployeeDTO [id=" + id + ", name=" + name + ", email=" + email + ", gender=" + gender + ", pwd=" + pwd
-				+ ", role=" + role + ", status=" + status + ", c_by=" + c_by + ", c_on=" + c_on + ", m_by=" + m_by
-				+ ", m_on=" + m_on + "]";
+		return "EmployeeDTO [id=" + id + ", name=" + name + ", email=" + email + ", profilePicServername="
+				+ profilePicServername + ", profilePicUserName=" + profilePicUserName + ", dob=" + dob + ", gender="
+				+ gender + ", pwd=" + pwd + ", role=" + role + ", status=" + status + ", c_by=" + c_by + ", c_on="
+				+ c_on + ", m_by=" + m_by + ", m_on=" + m_on + "]";
 	}
 	public EmployeeDTO() {
 		super();
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	public String getProfilePicFileContent() {
+		return profilePicFileContent;
+	}
+	public void setProfilePicFileContent(String profilePicFileContent) {
+		this.profilePicFileContent = profilePicFileContent;
 	}
 	
 	

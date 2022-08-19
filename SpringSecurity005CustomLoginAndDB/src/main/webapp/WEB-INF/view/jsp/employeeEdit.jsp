@@ -50,10 +50,28 @@
     <label for="exampleInputPassword1" class="form-label">Email</label>
      <form:input path="email" class="form-control"/>
    </div>
+   
+   
+   
+   
+   
+    <div class="mb-3 form-group">
+    <label for="exampleInputPassword1" class="form-label">Birthdate</label>
+     <div class="input-group date" id="datepicker">
+            
+            <form:input path="dob" class="form-control"/>
+            <span class="input-group-append">
+            <span class="input-group-text bg-white d-block">
+            <i class="fa fa-calendar"></i>
+            </span>
+            </span>
+        </div>
+   </div>
+   
   <div class="mb-3 form-group">
     <label for="exampleInputPassword1" class="form-label">Gender</label>
-     Male&nbsp;<form:radiobutton path="gender" class="form-control" value="0"/>
-     &nbsp;&nbsp;Female&nbsp;<form:radiobutton path="gender" class="form-control" value="1"/>
+     Male&nbsp;<form:radiobutton path="gender" class="form-check-input" value="0"/>
+     &nbsp;&nbsp;Female&nbsp;<form:radiobutton path="gender" class="form-check-input" value="1"/>
    </div>
  
   <div class="mb-3 form-group">
@@ -65,10 +83,75 @@
    </div>
  
   
+  <%-- image upload - start --%>           
+
+
+<div class="mb-3 form-group">
+   
+
+   
+ <div class="imageupload panel panel-default">
+                <div class="panel-heading clearfix">
+                   Select Image file
+                <%--    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default active">File</button>
+                        <button type="button" class="btn btn-default">URL</button>
+                    </div>
+                    --%> 
+                </div>
+                <div class="file-tab panel-body">
+                 <img src="data:image/jpg;base64,${employee.profilePicFileContent}" alt="Image preview" class="thumbnail"/>
+                    <label class="btn btn-primary btn-file">
+                        <span>Browse</span>
+                        <!-- The file is stored here. -->
+                        <input type="file" name="profilePicUserName">
+                    </label>
+                    <button type="button" class="btn btn-danger">Delete image</button>
+                </div>
+                <div class="url-tab panel-body">
+                    <div class="input-group">
+                        <input type="text" class="form-control hasclear" placeholder="Image URL">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-default">Remove</button>
+                    <!-- The URL is stored here. -->
+                    <input type="hidden" name="image-url" id="image-url">
+                </div>
+            </div>
+
+     </div>     
+ 
+<%-- image upload - end --%>   
+  
+  
   <button type="submit" class="btn btn-primary">Submit</button>
 </form:form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Bootstrap datepicker JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script src="${contextPath}/resources/imageupload/bootstrap-imageupload.js"></script>
+  <link href="${contextPath}/resources/imageupload/bootstrap-imageupload.css" rel="stylesheet">
+  
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datepicker').datepicker({ format: 'dd-M-yyyy' });
+        //...
+    });
+
+    var $imageupload = $('.imageupload');
+   // $imageupload.imageupload();
+    $imageupload.addClass('imageupload-disabled');
+</script> 
+
   </body>
 </html>
 

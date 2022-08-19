@@ -52,6 +52,22 @@
     
      <c:out value="${employee.email}"/>
    </div>
+   
+   
+   <div class="mb-3 form-group">
+    <label for="exampleInputPassword1" class="form-label">Profile pic</label>
+       <img src="data:image/jpg;base64,${employee.profilePicFileContent}"/>
+      <c:out value="${employee.profilePicFileContent}"/>
+   </div>
+   
+   
+   
+    <div class="mb-3 form-group">
+    <label for="exampleInputPassword1" class="form-label">Birthdate</label>
+    
+    <c:out value="${employee.dob}"/>
+     
+   </div>
   <div class="mb-3 form-group">
     <label for="exampleInputPassword1" class="form-label">Gender</label>
     

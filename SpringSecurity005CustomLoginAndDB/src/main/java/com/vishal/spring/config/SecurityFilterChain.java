@@ -31,11 +31,14 @@ public class SecurityFilterChain extends WebSecurityConfigurerAdapter {
 		 
 		 http
 		 .authorizeRequests()
+		/* .antMatchers("/**").permitAll()*/
+		 
 		 .antMatchers("/employeeNew","/employeeAdd").hasAuthority("admin")
-		 .antMatchers("/customLogin").permitAll()
+		 .antMatchers("/customLogin","/resources/**").permitAll()
 		 . anyRequest().authenticated()
 		 .and()
-		 .formLogin().loginPage("/customLogin").loginProcessingUrl("/loginProcess").defaultSuccessUrl("/dashboard").and().logout();
+		 .formLogin().loginPage("/customLogin").loginProcessingUrl("/loginProcess").defaultSuccessUrl("/dashboard").and()
+		 .logout();
 		 
 	}
 }
