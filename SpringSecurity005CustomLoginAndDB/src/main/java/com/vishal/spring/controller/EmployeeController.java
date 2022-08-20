@@ -103,10 +103,28 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employeeEdit")
-	public String employeeEdit1(@ModelAttribute("employee")EmployeeDTO employee, BindingResult bindingResult) {
+	public String employeeEdit1(@ModelAttribute("employee")EmployeeDTO employee, BindingResult bindingResult,@RequestParam("profilePicUserName") MultipartFile profilePicUserName) {
 		
 		System.out.println(employee);
 		String error="";
+		
+		if(profilePicUserName!=null) {
+			
+			System.out.println("employee.getProfilePicUserName()="+employee.getProfilePicUserName());
+			System.out.println("profilePicUserName.getOriginalFilename()="+profilePicUserName.getOriginalFilename());
+			employee.setProfilePicUserName(profilePicUserName.getOriginalFilename());
+			try {
+				profilePicUserName.transferTo(new File("F:\\ws\\z-uploadedFiles\\"+profilePicUserName.getOriginalFilename()));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace(System.out);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace(System.out);
+			}
+		}else {
+			System.out.println("Multipart is null");
+		}
 		
 		int count=employeeDAO.editUser(employee);
 		if(count>0) {

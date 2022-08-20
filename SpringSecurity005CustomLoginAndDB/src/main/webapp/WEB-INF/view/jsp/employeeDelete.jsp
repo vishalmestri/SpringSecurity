@@ -56,8 +56,8 @@
    
    <div class="mb-3 form-group">
     <label for="exampleInputPassword1" class="form-label">Profile pic</label>
-       <img src="data:image/jpg;base64,${employee.profilePicFileContent}"/>
-      <c:out value="${employee.profilePicFileContent}"/>
+       <img src="data:image/jpg;base64,${employee.profilePicFileContent}" alt="Image preview" class="thumbnail"  style="max-width: 250px; max-height: 250px"/>
+    
    </div>
    
    

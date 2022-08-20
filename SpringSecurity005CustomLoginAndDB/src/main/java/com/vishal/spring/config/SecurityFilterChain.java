@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
 @EnableWebSecurity(debug = true)
@@ -38,7 +39,10 @@ public class SecurityFilterChain extends WebSecurityConfigurerAdapter {
 		 . anyRequest().authenticated()
 		 .and()
 		 .formLogin().loginPage("/customLogin").loginProcessingUrl("/loginProcess").defaultSuccessUrl("/dashboard").and()
-		 .logout();
+		 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		 .logoutSuccessUrl("/customLogin")
+		 .invalidateHttpSession(true)
+		 .deleteCookies("JSESSIONID");
 		 
 	}
 }

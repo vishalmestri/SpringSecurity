@@ -108,8 +108,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		public int editUser(EmployeeDTO employee) {
 			// TODO Auto-generated method stub
 		
-		Object arry[]= {employee.getName(),employee.getEmail(),employee.getGender(),employee.getRole(),employee.getId()};
-		int count=jdbcTemplate.update("update employeem set name=?, email=?, gender=? ,role=? where id =?",arry);
+		Object arry[]= {employee.getName(),employee.getEmail(),employee.getGender(),employee.getRole(),employee.getProfilePicUserName(),employee.getId()};
+		int count=jdbcTemplate.update("update employeem set name=?, email=?, gender=? ,role=?,profilePicUserName=? where id =?",arry);
 		
 			return count;
 		}	

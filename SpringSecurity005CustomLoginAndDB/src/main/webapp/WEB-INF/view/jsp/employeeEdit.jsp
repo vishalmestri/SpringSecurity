@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add Employee</title>
+    <title>Edit Employee</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
@@ -37,9 +37,9 @@
 </nav>
     <%-- nav bar end   --%>
     <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-    <form:form action="${contextPath}/employeeEdit" method="POST" modelAttribute="employee">
+    <form:form action="${contextPath}/employeeEdit?${_csrf.parameterName}=${_csrf.token}" method="POST" modelAttribute="employee" enctype="multipart/form-data">
     <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Add New Employee</label>
+    <label for="exampleInputEmail1" class="form-label">Edit Employee</label>
    <form:hidden path="id"/>
    </div>
   <div class="mb-3 form-group">
@@ -100,7 +100,8 @@
                     --%> 
                 </div>
                 <div class="file-tab panel-body">
-                 <img src="data:image/jpg;base64,${employee.profilePicFileContent}" alt="Image preview" class="thumbnail"/>
+           <%--       <img src="data:image/jpg;base64,${employee.profilePicFileContent}" alt="Image preview" class="thumbnail"/>
+             --%>
                     <label class="btn btn-primary btn-file">
                         <span>Browse</span>
                         <!-- The file is stored here. -->
@@ -148,9 +149,18 @@
     });
 
     var $imageupload = $('.imageupload');
-   // $imageupload.imageupload();
-    $imageupload.addClass('imageupload-disabled');
-</script> 
+    $imageupload.imageupload();
+    //$imageupload.addClass('imageupload-disabled');
+    
+    var $fileTab = $imageupload.find('.file-tab');
+    var $browseFileButton = $fileTab.find('.btn:eq(0)');
+    $browseFileButton.find('span').text('Change');
+    
+    var $removeFileButton = $fileTab.find('.btn:eq(1)');
+    $removeFileButton.css('display', 'inline-block');
+    $fileTab.prepend('<img src="data:image/jpg;base64,<c:out value="${employee.profilePicFileContent}"></c:out>" alt="Image preview" class="thumbnail" style="max-width: 250px; max-height: 250px">');
+  
+    </script> 
 
   </body>
 </html>
