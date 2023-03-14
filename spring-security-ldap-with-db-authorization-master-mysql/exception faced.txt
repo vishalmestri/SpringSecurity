@@ -1,0 +1,540 @@
+2023-03-14T19:17:31.675+05:30  INFO 5796 --- [nio-8080-exec-7] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for POST '/login':
+
+org.apache.catalina.connector.RequestFacade@71b98798
+
+servletPath:/login
+pathInfo:null
+headers: 
+host: localhost:8080
+connection: keep-alive
+content-length: 128
+cache-control: max-age=0
+sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+upgrade-insecure-requests: 1
+origin: http://localhost:8080
+content-type: application/x-www-form-urlencoded
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site: same-origin
+sec-fetch-mode: navigate
+sec-fetch-user: ?1
+sec-fetch-dest: document
+referer: http://localhost:8080/login?error
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+cookie: jenkins-timestamper-offset=-19800000; JSESSIONID=27E8CF940009C43330622BC0E8472539
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  CsrfFilter
+  LogoutFilter
+  UsernamePasswordAuthenticationFilter
+  DefaultLoginPageGeneratingFilter
+  DefaultLogoutPageGeneratingFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
+2023-03-14T19:17:31.676+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@3c9c91e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@746da54f, org.springframework.security.web.context.SecurityContextHolderFilter@2213854b, org.springframework.security.web.header.HeaderWriterFilter@3db5195, org.springframework.security.web.csrf.CsrfFilter@66e62fc4, org.springframework.security.web.authentication.logout.LogoutFilter@575e862c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@448a6d00, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b9dc62f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2f2d8770, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33bd9ac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fc21ff4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@742dbac8, org.springframework.security.web.access.ExceptionTranslationFilter@2ec23ec3, org.springframework.security.web.access.intercept.AuthorizationFilter@2d41bb5a]] (1/1)
+2023-03-14T19:17:31.677+05:30 DEBUG 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2023-03-14T19:17:31.677+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking DisableEncodeUrlFilter (1/14)
+2023-03-14T19:17:31.677+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking WebAsyncManagerIntegrationFilter (2/14)
+2023-03-14T19:17:31.678+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking SecurityContextHolderFilter (3/14)
+2023-03-14T19:17:31.680+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking HeaderWriterFilter (4/14)
+2023-03-14T19:17:31.680+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking CsrfFilter (5/14)
+2023-03-14T19:17:31.681+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking LogoutFilter (6/14)
+2023-03-14T19:17:31.681+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.s.w.a.logout.LogoutFilter            : Did not match request to Ant [pattern='/logout', POST]
+2023-03-14T19:17:31.681+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Invoking UsernamePasswordAuthenticationFilter (7/14)
+2023-03-14T19:17:31.682+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.s.authentication.ProviderManager     : Authenticating request with LdapAuthenticationProvider (1/1)
+2023-03-14T19:17:31.687+05:30 TRACE 5796 --- [nio-8080-exec-7] .s.s.l.a.PasswordComparisonAuthenticator : Comparing password attribute 'userPassword' for user 'uid=ben,ou=people'
+2023-03-14T19:17:31.873+05:30 DEBUG 5796 --- [nio-8080-exec-7] .s.s.l.a.PasswordComparisonAuthenticator : Locally matched password attribute 'userPassword' for user 'uid=ben,ou=people'
+CustomAuthoritiesPopulator-getGrantedAuthorities called-start
+Hibernate: select m1_0.id,m1_0.is_enabled,m1_0.username from my_user m1_0 where m1_0.username=?
+Hibernate: select a1_0.id,a1_0.authority,a1_0.user_id from authorities a1_0 where a1_0.user_id=?
+Hibernate: select m1_0.id,m1_0.is_enabled,m1_0.username from my_user m1_0 where m1_0.id=?
+CustomAuthoritiesPopulator-getGrantedAuthorities called-start1
+CustomAuthoritiesPopulator-getGrantedAuthorities called-end
+CustomUserDetailsMapper-mapUserFromContext called-start
+2023-03-14T19:17:32.111+05:30 DEBUG 5796 --- [nio-8080-exec-7] o.s.s.l.u.LdapUserDetailsMapper          : Mapping user details from context with DN uid=ben,ou=people,dc=springframework,dc=org
+CustomUserDetailsMapper-mapUserFromContext called-end
+2023-03-14T19:17:32.115+05:30 DEBUG 5796 --- [nio-8080-exec-7] o.s.s.l.a.LdapAuthenticationProvider     : Authenticated user
+2023-03-14T19:17:32.119+05:30 TRACE 5796 --- [nio-8080-exec-7] s.CompositeSessionAuthenticationStrategy : Preparing session with ChangeSessionIdAuthenticationStrategy (1/2)
+2023-03-14T19:17:32.119+05:30 DEBUG 5796 --- [nio-8080-exec-7] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 27E8CF940009C43330622BC0E8472539
+2023-03-14T19:17:32.121+05:30 TRACE 5796 --- [nio-8080-exec-7] s.CompositeSessionAuthenticationStrategy : Preparing session with CsrfAuthenticationStrategy (2/2)
+2023-03-14T19:17:32.122+05:30 DEBUG 5796 --- [nio-8080-exec-7] o.s.s.w.csrf.CsrfAuthenticationStrategy  : Replaced CSRF Token
+2023-03-14T19:17:32.124+05:30 DEBUG 5796 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@62c81f2c]
+2023-03-14T19:17:32.125+05:30 DEBUG 5796 --- [nio-8080-exec-7] w.a.UsernamePasswordAuthenticationFilter : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+2023-03-14T19:17:32.126+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.s.w.s.HttpSessionRequestCache        : Removing DefaultSavedRequest from session if present
+2023-03-14T19:17:32.126+05:30 DEBUG 5796 --- [nio-8080-exec-7] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /hello
+2023-03-14T19:17:32.126+05:30 TRACE 5796 --- [nio-8080-exec-7] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match request to [Is Secure]
+2023-03-14T19:17:32.132+05:30  INFO 5796 --- [nio-8080-exec-8] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/hello':
+
+org.apache.catalina.connector.RequestFacade@3bdb3bf1
+
+servletPath:/hello
+pathInfo:null
+headers: 
+host: localhost:8080
+connection: keep-alive
+cache-control: max-age=0
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site: same-origin
+sec-fetch-mode: navigate
+sec-fetch-user: ?1
+sec-fetch-dest: document
+sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+referer: http://localhost:8080/login?error
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+cookie: jenkins-timestamper-offset=-19800000; JSESSIONID=36F2803B6D7938BFFDAFED59B826B7C3
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  CsrfFilter
+  LogoutFilter
+  UsernamePasswordAuthenticationFilter
+  DefaultLoginPageGeneratingFilter
+  DefaultLogoutPageGeneratingFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
+2023-03-14T19:17:32.133+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@3c9c91e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@746da54f, org.springframework.security.web.context.SecurityContextHolderFilter@2213854b, org.springframework.security.web.header.HeaderWriterFilter@3db5195, org.springframework.security.web.csrf.CsrfFilter@66e62fc4, org.springframework.security.web.authentication.logout.LogoutFilter@575e862c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@448a6d00, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b9dc62f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2f2d8770, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33bd9ac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fc21ff4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@742dbac8, org.springframework.security.web.access.ExceptionTranslationFilter@2ec23ec3, org.springframework.security.web.access.intercept.AuthorizationFilter@2d41bb5a]] (1/1)
+2023-03-14T19:17:32.134+05:30 DEBUG 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /hello
+2023-03-14T19:17:32.135+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DisableEncodeUrlFilter (1/14)
+2023-03-14T19:17:32.135+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking WebAsyncManagerIntegrationFilter (2/14)
+2023-03-14T19:17:32.135+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking SecurityContextHolderFilter (3/14)
+2023-03-14T19:17:32.136+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking HeaderWriterFilter (4/14)
+2023-03-14T19:17:32.136+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking CsrfFilter (5/14)
+2023-03-14T19:17:32.136+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.csrf.CsrfFilter         : Did not protect against CSRF since request did not match CsrfNotRequired [TRACE, HEAD, GET, OPTIONS]
+2023-03-14T19:17:32.137+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking LogoutFilter (6/14)
+2023-03-14T19:17:32.137+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.a.logout.LogoutFilter            : Did not match request to Ant [pattern='/logout', POST]
+2023-03-14T19:17:32.137+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking UsernamePasswordAuthenticationFilter (7/14)
+2023-03-14T19:17:32.137+05:30 TRACE 5796 --- [nio-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : Did not match request to Ant [pattern='/login', POST]
+2023-03-14T19:17:32.137+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DefaultLoginPageGeneratingFilter (8/14)
+2023-03-14T19:17:32.138+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DefaultLogoutPageGeneratingFilter (9/14)
+2023-03-14T19:17:32.138+05:30 TRACE 5796 --- [nio-8080-exec-8] .w.a.u.DefaultLogoutPageGeneratingFilter : Did not render default logout page since request did not match [Ant [pattern='/logout', GET]]
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking RequestCacheAwareFilter (10/14)
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.s.HttpSessionRequestCache        : matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking SecurityContextHolderAwareRequestFilter (11/14)
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking AnonymousAuthenticationFilter (12/14)
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking ExceptionTranslationFilter (13/14)
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking AuthorizationFilter (14/14)
+2023-03-14T19:17:32.139+05:30 TRACE 5796 --- [nio-8080-exec-8] estMatcherDelegatingAuthorizationManager : Authorizing SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@351cc2fa]
+2023-03-14T19:17:32.140+05:30 TRACE 5796 --- [nio-8080-exec-8] estMatcherDelegatingAuthorizationManager : Checking authorization on SecurityContextHolderAwareRequestWrapper[ org.springframework.security.web.header.HeaderWriterFilter$HeaderWriterRequest@351cc2fa] using org.springframework.security.authorization.AuthenticatedAuthorizationManager@4d4a8b1f
+2023-03-14T19:17:32.140+05:30 TRACE 5796 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]] from SPRING_SECURITY_CONTEXT
+2023-03-14T19:17:32.141+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+2023-03-14T19:17:32.141+05:30 DEBUG 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /hello
+2023-03-14T19:17:32.149+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.spring6.view.ThymeleafViewResolver   : [THYMELEAF] View hello will be handled by ThymeleafViewResolver and a ThymeleafView instance will be created for it
+2023-03-14T19:17:32.151+05:30 TRACE 5796 --- [nio-8080-exec-8] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-8] STARTING PROCESS OF TEMPLATE "hello" WITH LOCALE en_US
+2023-03-14T19:17:32.151+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.TemplateEngine.cache.TEMPLATE_CACHE  : [THYMELEAF][http-nio-8080-exec-8][TEMPLATE_CACHE][CACHE_MISS] Cache miss in cache "TEMPLATE_CACHE" for key "hello".
+2023-03-14T19:17:32.152+05:30 TRACE 5796 --- [nio-8080-exec-8] org.thymeleaf.engine.TemplateManager     : [THYMELEAF][http-nio-8080-exec-8] Template resolver match! Resolver "org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver" will resolve template "hello"
+2023-03-14T19:17:32.165+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.TemplateEngine.cache.TEMPLATE_CACHE  : [THYMELEAF][http-nio-8080-exec-8][TEMPLATE_CACHE][CACHE_ADD][2] Adding cache entry in cache "TEMPLATE_CACHE" for key "hello". New size is 2.
+2023-03-14T19:17:32.167+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_MISS] Cache miss in cache "EXPRESSION_CACHE" for key "expr|${user}".
+2023-03-14T19:17:32.168+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_ADD][2] Adding cache entry in cache "EXPRESSION_CACHE" for key "expr|${user}". New size is 2.
+2023-03-14T19:17:32.168+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.s.expression.VariableExpression      : [THYMELEAF][http-nio-8080-exec-8] Evaluating variable expression: "${user}"
+2023-03-14T19:17:32.168+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.s.e.SPELVariableExpressionEvaluator  : [THYMELEAF][http-nio-8080-exec-8] SpringEL expression: evaluating expression "user" on target
+2023-03-14T19:17:32.168+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_MISS] Cache miss in cache "EXPRESSION_CACHE" for key "spel|user".
+2023-03-14T19:17:32.178+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_ADD][3] Adding cache entry in cache "EXPRESSION_CACHE" for key "spel|user". New size is 3.
+2023-03-14T19:17:32.185+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.TemplateEngine.cache.TEMPLATE_CACHE  : [THYMELEAF][http-nio-8080-exec-8][TEMPLATE_CACHE][CACHE_MISS] Cache miss in cache "TEMPLATE_CACHE" for key "[[${#httpServletRequest.remoteUser}]]@(hello;10,34) @TEXT".
+2023-03-14T19:17:32.193+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.TemplateEngine.cache.TEMPLATE_CACHE  : [THYMELEAF][http-nio-8080-exec-8][TEMPLATE_CACHE][CACHE_ADD][3] Adding cache entry in cache "TEMPLATE_CACHE" for key "[[${#httpServletRequest.remoteUser}]]@(hello;10,34) @TEXT". New size is 3.
+2023-03-14T19:17:32.195+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_MISS] Cache miss in cache "EXPRESSION_CACHE" for key "expr|${#httpServletRequest.remoteUser}".
+2023-03-14T19:17:32.195+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_ADD][4] Adding cache entry in cache "EXPRESSION_CACHE" for key "expr|${#httpServletRequest.remoteUser}". New size is 4.
+2023-03-14T19:17:32.195+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.s.expression.VariableExpression      : [THYMELEAF][http-nio-8080-exec-8] Evaluating variable expression: "${#httpServletRequest.remoteUser}"
+2023-03-14T19:17:32.196+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.s.e.SPELVariableExpressionEvaluator  : [THYMELEAF][http-nio-8080-exec-8] SpringEL expression: evaluating expression "#httpServletRequest.remoteUser" on target
+2023-03-14T19:17:32.196+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_MISS] Cache miss in cache "EXPRESSION_CACHE" for key "spel|#httpServletRequest.remoteUser".
+2023-03-14T19:17:32.198+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.T.cache.EXPRESSION_CACHE             : [THYMELEAF][http-nio-8080-exec-8][EXPRESSION_CACHE][CACHE_ADD][5] Adding cache entry in cache "EXPRESSION_CACHE" for key "spel|#httpServletRequest.remoteUser". New size is 5.
+2023-03-14T19:17:32.207+05:30 ERROR 5796 --- [nio-8080-exec-8] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-8] Exception processing template "hello": An error happened during template rendering
+
+org.thymeleaf.exceptions.TemplateOutputException: An error happened during template rendering
+	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:75) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Text.beHandled(Text.java:97) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:188) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:174) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "#httpServletRequest.remoteUser" (template: "hello" - line 10, col 36)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Text.write(Text.java:78) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	... 100 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'remoteUser' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:405) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	... 117 common frames omitted
+
+2023-03-14T19:17:32.218+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.header.writers.HstsHeaderWriter  : Not injecting HSTS header since it did not match request to [Is Secure]
+2023-03-14T19:17:32.220+05:30 ERROR 5796 --- [nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateOutputException: An error happened during template rendering] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'remoteUser' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:405) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.0.6.jar:6.0.6]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.process(TemplateManager.java:519) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.LazyProcessingCharSequence.writeUnresolved(LazyProcessingCharSequence.java:85) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.util.AbstractLazyCharSequence.write(AbstractLazyCharSequence.java:103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.AbstractTextualTemplateEvent.writeContent(AbstractTextualTemplateEvent.java:224) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Text.write(Text.java:78) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.OutputTemplateHandler.handleText(OutputTemplateHandler.java:71) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleText(ProcessorTemplateHandler.java:587) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.Text.beHandled(Text.java:97) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.1.RELEASE.jar:3.1.1.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1415) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1159) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1098) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:705) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.0.6.jar:6.0.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.5.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter.doFilterInternal(DefaultLogoutPageGeneratingFilter.java:58) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:188) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter.doFilter(DefaultLoginPageGeneratingFilter.java:174) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:117) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.invokeWithWrappedRequest(DebugFilter.java:90) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:78) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.security.web.debug.DebugFilter.doFilter(DebugFilter.java:67) ~[spring-security-web-6.0.2.jar:6.0.2]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.6.jar:6.0.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.5.jar:10.1.5]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-03-14T19:17:32.230+05:30  INFO 5796 --- [nio-8080-exec-8] Spring Security Debugger                 : 
+
+************************************************************
+
+Request received for GET '/error':
+
+org.apache.catalina.core.ApplicationHttpRequest@b946a32
+
+servletPath:/error
+pathInfo:null
+headers: 
+host: localhost:8080
+connection: keep-alive
+cache-control: max-age=0
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+sec-fetch-site: same-origin
+sec-fetch-mode: navigate
+sec-fetch-user: ?1
+sec-fetch-dest: document
+sec-ch-ua: "Chromium";v="110", "Not A(Brand";v="24", "Google Chrome";v="110"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+referer: http://localhost:8080/login?error
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+cookie: jenkins-timestamper-offset=-19800000; JSESSIONID=36F2803B6D7938BFFDAFED59B826B7C3
+
+
+Security filter chain: [
+  DisableEncodeUrlFilter
+  WebAsyncManagerIntegrationFilter
+  SecurityContextHolderFilter
+  HeaderWriterFilter
+  CsrfFilter
+  LogoutFilter
+  UsernamePasswordAuthenticationFilter
+  DefaultLoginPageGeneratingFilter
+  DefaultLogoutPageGeneratingFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  AnonymousAuthenticationFilter
+  ExceptionTranslationFilter
+  AuthorizationFilter
+]
+
+
+************************************************************
+
+
+2023-03-14T19:17:32.231+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Trying to match request against DefaultSecurityFilterChain [RequestMatcher=any request, Filters=[org.springframework.security.web.session.DisableEncodeUrlFilter@3c9c91e3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@746da54f, org.springframework.security.web.context.SecurityContextHolderFilter@2213854b, org.springframework.security.web.header.HeaderWriterFilter@3db5195, org.springframework.security.web.csrf.CsrfFilter@66e62fc4, org.springframework.security.web.authentication.logout.LogoutFilter@575e862c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@448a6d00, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4b9dc62f, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2f2d8770, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33bd9ac3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fc21ff4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@742dbac8, org.springframework.security.web.access.ExceptionTranslationFilter@2ec23ec3, org.springframework.security.web.access.intercept.AuthorizationFilter@2d41bb5a]] (1/1)
+2023-03-14T19:17:32.232+05:30 DEBUG 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /error
+2023-03-14T19:17:32.232+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DisableEncodeUrlFilter (1/14)
+2023-03-14T19:17:32.232+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking WebAsyncManagerIntegrationFilter (2/14)
+2023-03-14T19:17:32.232+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking SecurityContextHolderFilter (3/14)
+2023-03-14T19:17:32.233+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking HeaderWriterFilter (4/14)
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking CsrfFilter (5/14)
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking LogoutFilter (6/14)
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.a.logout.LogoutFilter            : Did not match request to Ant [pattern='/logout', POST]
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking UsernamePasswordAuthenticationFilter (7/14)
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : Did not match request to Ant [pattern='/login', POST]
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DefaultLoginPageGeneratingFilter (8/14)
+2023-03-14T19:17:32.234+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking DefaultLogoutPageGeneratingFilter (9/14)
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking RequestCacheAwareFilter (10/14)
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.s.HttpSessionRequestCache        : matchingRequestParameterName is required for getMatchingRequest to lookup a value, but not provided
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking SecurityContextHolderAwareRequestFilter (11/14)
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking AnonymousAuthenticationFilter (12/14)
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking ExceptionTranslationFilter (13/14)
+2023-03-14T19:17:32.236+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Invoking AuthorizationFilter (14/14)
+2023-03-14T19:17:32.237+05:30 TRACE 5796 --- [nio-8080-exec-8] estMatcherDelegatingAuthorizationManager : Authorizing SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper@2308ff2e]]
+2023-03-14T19:17:32.241+05:30 TRACE 5796 --- [nio-8080-exec-8] estMatcherDelegatingAuthorizationManager : Checking authorization on SecurityContextHolderAwareRequestWrapper[ FirewalledRequest[ org.springframework.security.web.debug.DebugFilter$DebugRequestWrapper@2308ff2e]] using org.springframework.security.authorization.AuthenticatedAuthorizationManager@4d4a8b1f
+2023-03-14T19:17:32.241+05:30 TRACE 5796 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]] from SPRING_SECURITY_CONTEXT
+2023-03-14T19:17:32.241+05:30 TRACE 5796 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Did not set SecurityContextHolder since already authenticated UsernamePasswordAuthenticationToken [Principal=io.avec.securityldap.ldap.LdapUser@7a299538, Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=27E8CF940009C43330622BC0E8472539], Granted Authorities=[ROLE_USER, ROLE_ADMIN]]
+2023-03-14T19:17:32.241+05:30 DEBUG 5796 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /error
+2023-03-14T19:17:32.305+05:30 TRACE 5796 --- [nio-8080-exec-8] o.t.spring6.view.ThymeleafViewResolver   : [THYMELEAF] View error will be handled by ThymeleafViewResolver and a ThymeleafView instance will be created for it
+2023-03-14T19:23:52.529+05:30  INFO 5796 --- [on(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-03-14T19:23:52.555+05:30  INFO 5796 --- [on(2)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-03-14T19:23:52.557+05:30  INFO 5796 --- [on(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-03-14T19:23:52.560+05:30  WARN 5796 --- [on(2)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [Thread-3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.4.1/sun.nio.ch.SocketDispatcher.read0(Native Method)
+ java.base@17.0.4.1/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+ java.base@17.0.4.1/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:261)
+ java.base@17.0.4.1/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:312)
+ java.base@17.0.4.1/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+ java.base@17.0.4.1/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+ java.base@17.0.4.1/java.net.Socket$SocketInputStream.read(Socket.java:966)
+ java.base@17.0.4.1/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+ java.base@17.0.4.1/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+ java.base@17.0.4.1/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+ java.naming@17.0.4.1/com.sun.jndi.ldap.Connection.run(Connection.java:856)
+ java.base@17.0.4.1/java.lang.Thread.run(Thread.java:833)
+2023-03-14T19:23:52.591+05:30  INFO 5796 --- [on(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-14T19:23:52.595+05:30  INFO 5796 --- [on(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-03-14T19:23:52.606+05:30  INFO 5796 --- [on(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
