@@ -107,7 +107,7 @@ public class WebSecurityConfig  {
 	        httpSecurity.
 			authorizeHttpRequests()
 
-			.requestMatchers("/","/h2-console/**").permitAll()
+			.requestMatchers("/","/h2-console/**","/actuator/**").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.formLogin().defaultSuccessUrl("/hello", true)

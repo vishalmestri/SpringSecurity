@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 public class WelcomeController {
 
@@ -20,8 +22,12 @@ public class WelcomeController {
 //    }
 
     @GetMapping("/hello")
-    public String hello(Model model, Authentication authentication) {
+    public String hello(Model model, Authentication authentication,HttpServletRequest req) {
         model.addAttribute("user", authentication.getName());
+        model.addAttribute("httpServletRequest",req);
+        model.addAttribute("authentication",authentication);
+        model.addAttribute("authority",authentication.getAuthorities());
+        
         return "hello";
     }
 }
