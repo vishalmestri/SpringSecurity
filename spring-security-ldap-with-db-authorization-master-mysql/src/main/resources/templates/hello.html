@@ -7,8 +7,8 @@
 <body>
 
 <h1>Welcome '<span th:text="${user}"></span>'</h1>
-<p>Hello '<span th:inline="text">[[${#httpServletRequest}]][[${#httpServletRequest.remoteUser}]]</span>'</p>
-<p th:each="authority : ${#authentication.getAuthorities()}"
+<p>Hello '<span th:inline="text">[[${#remoteUser}]]</span>'</p>
+<p th:each="authority : ${#getAuthorities}"
    th:if="${authority.getAuthority().startsWith('ROLE_')}"
    th:text="${authority.getAuthority().replaceFirst('ROLE_', '')}">
 </p>

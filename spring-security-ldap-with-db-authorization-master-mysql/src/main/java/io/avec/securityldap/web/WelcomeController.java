@@ -4,6 +4,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -30,4 +31,15 @@ public class WelcomeController {
         
         return "hello";
     }
+    
+    @ModelAttribute("remoteUser")
+    public Object remoteUser(final HttpServletRequest request) {
+        return request.getRemoteUser();
+    }
+    
+    @ModelAttribute("getAuthorities")
+    public Object getAuthorities(final Authentication authentication) {
+        return authentication.getAuthorities();
+    }
+    
 }
