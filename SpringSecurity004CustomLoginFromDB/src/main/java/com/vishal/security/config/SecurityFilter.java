@@ -29,7 +29,7 @@ public class SecurityFilter extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
 		.antMatchers("/dashboard","/employeeHome","/employeeNew","/employeeAdd").hasAuthority("admin")
-		.antMatchers("/employeeView").hasAuthority("user")
+		.antMatchers("/dashboard","/employeeView").hasAuthority("user")
 		.antMatchers("/customerLogin","/loginProcess").permitAll()
 		.and()
 		.formLogin().loginPage("/customerLogin").loginProcessingUrl("/loginProcess").defaultSuccessUrl("/dashboard").and().logout();
